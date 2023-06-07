@@ -1,0 +1,80 @@
+@import "./vars";
+@import "./fonts";
+$color_black: #000000;
+$color_gold: #bdae82;
+$color_white: #ffffff;
+$computer:1420px;
+$small-computer:1368px;
+$big-tablet:980px;
+$tablet: 768px;
+.global-container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+.container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  @media (max-width: 1420px) {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+%font-inter {
+  font-family: "Inter";
+  font-weight: 400;
+}
+%font-title {
+  font-family: "Merriweather";
+  font-weight: 700px;
+}
+%line-title {
+  position: absolute;
+  width: 700px;
+  border-bottom: 2px solid $color_gold;
+  padding-top: 40px;
+  z-index: 0;
+}
+@mixin font($fontSize, $lineHeight, $color) {
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  color: $color;
+}
+
+a {
+  text-decoration: none;
+  color: $color_white;
+  @extend %font-inter;
+  @include font(20px, 50px, $color_white);
+}
+a:hover {
+  color: $color_gold;
+  transition: 0, 5s;
+}
+.btn {
+  padding: 8px 72px;
+  background-color: $color_gold;
+  border: none;
+  cursor: pointer;
+  @extend %font-inter;
+  @include font(20px, 40px, $color_black);
+}
+.btn:hover {
+  @include font(20px, 40px, $color_white);
+}
+.button {
+  background-color: $color_black;
+  border: 1px solid $color_gold;
+  @extend %font-inter;
+  @include font(20px, 40px, $color_gold);
+  cursor: pointer;
+}
+.button:hover {
+  @include font(20px, 40px, $color_black);
+  background-color: $color_gold;
+}
+.svg:hover {
+  fill: $color_gold;
+  transition: 0, 3s;
+}
